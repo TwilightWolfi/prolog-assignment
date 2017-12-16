@@ -14,4 +14,6 @@ parent(kate,charlotte).
 
 the_royal_females([diana,elisabeth,kate,charlotte,anne,zara,sarah,beatrice,queenmother]).
 the_royal_males([charles,andrew,edward,william,harry,peter,philip,georgejun,eugenie,mark,george]).
-mother(X,Y) :- 
+mother(X,Y) :- member(X,the_royal_females()), parent(X,Y).
+has_child(X) :- parent(X,Y).
+grandparent(X,Y) :- parent(X,V), parent(V,Y).
